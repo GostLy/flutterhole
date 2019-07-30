@@ -19,7 +19,7 @@ void main() {
     final configInfo = Config().configInfo;
     print('configInfo: $configInfo');
 //    await Future.delayed(Duration(seconds: 2));
-//    print('hi');
+    print('hi');
     await screenshot(driver, configInfo, 'myscreenshot1');
 
     expect(configInfo.isEmpty, isFalse);

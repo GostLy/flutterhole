@@ -9,7 +9,10 @@ import 'package:flutterhole/bloc/api/top_items.dart';
 import 'package:flutterhole/bloc/api/top_sources.dart';
 import 'package:flutterhole/bloc/api/versions.dart';
 import 'package:flutterhole/bloc/api/whitelist.dart';
+import 'package:flutterhole/bloc/pihole/bloc.dart';
 import 'package:mockito/mockito.dart';
+
+class MockPiholeBloc extends Mock implements PiholeBloc {}
 
 class MockSummaryBloc extends Mock implements SummaryBloc {}
 

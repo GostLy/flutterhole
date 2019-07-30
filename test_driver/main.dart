@@ -13,6 +13,7 @@ import 'package:flutterhole/bloc/api/top_items.dart';
 import 'package:flutterhole/bloc/api/top_sources.dart';
 import 'package:flutterhole/bloc/api/versions.dart';
 import 'package:flutterhole/bloc/api/whitelist.dart';
+import 'package:flutterhole/bloc/pihole/bloc.dart';
 import 'package:flutterhole/service/globals.dart';
 import 'package:flutterhole/service/routes.dart';
 import 'package:flutterhole/widget/app.dart';
@@ -26,6 +27,7 @@ void main() {
 
   enableFlutterDriverExtension();
 
+  final MockPiholeBloc piholeBloc = MockPiholeBloc();
   final MockSummaryBloc summaryBloc = MockSummaryBloc();
   final MockVersionsBloc versionsBloc = MockVersionsBloc();
   final MockQueriesOverTimeBloc queriesOverTimeBloc = MockQueriesOverTimeBloc();
@@ -42,6 +44,7 @@ void main() {
   runApp(App(
     themeModel: ThemeModel(),
     providers: <BlocProvider>[
+      BlocProvider<PiholeBloc>(builder: (context) => piholeBloc),
       BlocProvider<SummaryBloc>(builder: (context) => summaryBloc),
       BlocProvider<VersionsBloc>(builder: (context) => versionsBloc),
       BlocProvider<QueriesOverTimeBloc>(

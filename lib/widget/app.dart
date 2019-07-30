@@ -22,6 +22,7 @@ class App extends StatelessWidget {
           return MaterialApp(
             title: 'FlutterHole',
             theme: model.theme,
+            debugShowCheckedModeBanner: false,
             onGenerateRoute: Globals.router.generator,
           );
         }),
